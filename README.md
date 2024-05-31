@@ -1,5 +1,7 @@
 # Neovim Bug: indent + softtabstop lsp de-sync
 
+Link: https://github.com/neovim/neovim/issues/29119
+
 ### Steps:
 
 1. `nvim --clean -u init.lua main.go`
