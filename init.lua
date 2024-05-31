@@ -1,6 +1,12 @@
--- add plugins to pack/plugin/opt/
-vim.o.packpath = "."
+vim.o.foldmethod = "indent"
+vim.o.softtabstop = -1
 
--- add the example plugin
-vim.cmd.packadd("example")
-require("example").hello()
+vim.api.nvim_create_autocmd("FileType", {
+        pattern = "go",
+        callback = function()
+		vim.lsp.start({
+			name = "gopls",
+			cmd = { "gopls" }
+		})
+        end
+})
